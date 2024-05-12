@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #2f363e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+   position: relative;
+   /* min-height: 500px; */
+   border-radius: 20px;
+   border-top-left-radius: 225px;
+   border-top-right-radius: 225px;
+   box-shadow: 10px 50px 75px rgba(0, 0, 0, 0.25);
+   inset: 5px 5px 20px rgba(0,0,0,0.25);
+   inset: 5px 5px 20px rgba(0,0,0,0.5);
+   inset: 5px 5px 20px rgba(0,0,0,0.2);
+   inset: 5px 5px 20px rgba(0,0,0,0.75);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+.clock{
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: #2f363e;
+    box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25);
+    inset: 5px 5px 10px rgba(0,0,0,0.25);
+    inset: 5px 5px 20px rgba(0,0,0,0.5);
+    inset: -5px -5px 15px rgba(0,0,0,0.2);
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+}
+.clock::before{
+    content: '';
+ position: absolute;
+ width: 8px;
+ height: 8px;
+ background-color:#2f363e;
+ border: 2px solid wheat;
+ border-radius: 50%;    
+}
+.clock span
+{
+    position: absolute;
+    inset: 20px;
+    color: #fff;
+    text-align: center;
+    transform: rotate(calc(30deg*var(--i)));
+
+
+}
+.clock span b
+{
+    font-size: 2em;
+    opacity: 0.5;
+    font-weight: 300;
+    display: inline-block;
+    transform: rotate(calc(-30deg *var(--i)));
+
+}
+.circle{
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    border: 1px solid #6f859f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.circle2{
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 1px solid #6f859f;
+    z-index: 9;
+}
+.circle3{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid #6f859f;
+    z-index: 1;
+}
+.circle i{
+    position: absolute;
+    width: 4px;
+    height: 50%;
+    line-height-step: 20px;
+    background:var(--clr);
+    transform-origin: bottom;
+}
+.circle::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color:var(--clr);
+    position: absolute;
+    top: -8px;
+    box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+  border-radius: 50%;
+
+}
+.digital{
+    position: absolute;
+    border: 3px solid rgb(73, 73, 73);
+    bottom: 60px;
+    border-radius: 8px;
+    font-size: 23px;
+    color: lightyellow;
+    animation-name: dig;
+    animation-duration: 1s time initial;
+} 
+@keyframes dig {
+    0%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 0.8;
+    }
+    
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+
+            <div class="circle" id="sc" style="--clr:rgb(34, 165, 34);"><i></i></div>
+            <div class="circle  circle2" id="mn" style="--clr:rgb(169, 181, 43);"><i></i></div>
+            <div class="circle circle3" id="hr" style="--clr:rgb(168, 45, 31);"><i></i></div>
+
+            <span style="--i:1;"><b>1</b></span>
+            <span style="--i:2;"><b>2</b></span>
+            <span style="--i:3;"><b>3</b></span>
+            <span style="--i:4;"><b>4</b></span>
+            <span style="--i:5;"><b>5</b></span>
+            <span style="--i:6;"><b>6</b></span>
+            <span style="--i:7;"><b>7</b></span>
+            <span style="--i:8;"><b>8</b></span>
+            <span style="--i:9;"><b>9</b></span>
+            <span style="--i:10;"><b>10</b></span>
+            <span style="--i:11;"><b>11</b></span>
+            <span style="--i:12;"><b>12</b></span>
+        </div>
+    </div>
+    <p class="digital" > <samp id="hours" ></samp>:<samp id="minute" ></samp>:<samp id="second" ></samp></p>
+    <script>
+
+        let hr = document.querySelector('#hr');
+        let mn = document.querySelector('#mn');
+        let sc = document.querySelector('#sc');
+
+        setInterval(() => {
+            let date = new Date(); // Corrected variable name here
+            let hh = date.getHours() * 30;
+            let mm = date.getMinutes() * 6;
+            let ss = date.getSeconds() * 6;
+     
+            let hh1 = date.getHours();
+            let mm2 = date.getMinutes() ;
+            let ss3 = date.getSeconds() ;
+
+            document.getElementById("hours").innerHTML = hh1;
+            document.getElementById("minute").innerHTML = mm2;
+           document.getElementById("second").innerHTML = ss3;
+
+            hr.style.transform = `rotateZ(${hh + (mm / 12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        }, 1000); // Added missing interval time (1000 milliseconds)
+     
+        
+    </script>
+
+</body>
+</html>
